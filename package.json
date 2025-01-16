@@ -1,0 +1,38 @@
+{
+  "name": "cybershield",
+  "version": "1.0.0",
+  "description": "Zero-Trust Identity, Multi-Tenant RBAC/ABAC Policy Engine & API Gateway Security Platform",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "nodemon server/server.js",
+    "seed": "node server/utils/seedSecurity.js",
+    "test": "node --test server/tests/*.test.js",
+    "test:coverage": "node --test --experimental-test-coverage server/tests/*.test.js"
+  },
+  "keywords": [
+    "cybersecurity",
+    "zero-trust",
+    "rbac",
+    "abac",
+    "waf",
+    "jwt",
+    "security-gateway",
+    "threat-detection"
+  ],
+  "author": "developertdsl-prog <developer.tdsl@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "mongoose": "^8.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
