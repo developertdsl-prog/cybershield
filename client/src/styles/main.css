@@ -1,0 +1,220 @@
+/* CyberShield SOC Matrix Design System */
+:root {
+  --bg-core: #05070a;
+  --bg-card: rgba(10, 15, 26, 0.85);
+  --border-glow: rgba(16, 185, 129, 0.3);
+  --border-danger: rgba(244, 63, 94, 0.4);
+  --border-line: rgba(255, 255, 255, 0.08);
+  --text-main: #f1f5f9;
+  --text-dim: #94a3b8;
+  --cyber-green: #10b981;
+  --cyber-red: #f43f5e;
+  --cyber-amber: #f59e0b;
+  --cyber-cyan: #06b6d4;
+  --cyber-purple: #a855f7;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-core);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.soc-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.soc-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-line);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.soc-card:hover {
+  border-color: var(--border-glow);
+}
+
+.soc-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: rgba(10, 15, 26, 0.95);
+  border: 1px solid var(--border-line);
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.soc-logo {
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.5px;
+}
+
+.waf-pill {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--cyber-green);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.soc-nav-tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.soc-tab {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-dim);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.soc-tab:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.soc-tab.active {
+  color: #fff;
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.soc-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.metric-hdr {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.metric-val {
+  font-size: 28px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.soc-table-wrapper {
+  overflow-x: auto;
+}
+
+.soc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.soc-table th {
+  text-align: left;
+  padding: 12px 16px;
+  color: var(--text-dim);
+  font-size: 11px;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--border-line);
+}
+
+.soc-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.badge-threat-crit {
+  background: rgba(244, 63, 94, 0.2);
+  color: var(--cyber-red);
+  border: 1px solid rgba(244, 63, 94, 0.4);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.badge-threat-high {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--cyber-amber);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.btn-cyber {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-cyber-danger {
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
+  color: #fff;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-dialog {
+  background: #0a0f1a;
+  border: 1px solid var(--border-line);
+  border-radius: 14px;
+  width: 500px;
+  padding: 24px;
+}
